@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="heading">
+        <div class="text">Array of Object</div>
+      </div>
+      <hr />
+      <h3>
+        "let studentRecords = [ {name: 'John', id: 123, marks : 98 },
+        {name: 'Baba', id: 101, marks : 23 },
+        {name: 'yaga', id: 200, marks : 45 },
+        {name: 'Wick', id: 115, marks : 75 } ] "
+      </h3>
+    <hr/>
+    <hr />
+    <h3>
+      Q1. "We are interested in retrieving only the students' names; all the names should be in caps.
+
+      ['JOHN', 'BABA', 'YAGA', 'WICK']"
+    </h3>
+    <h4>Ans:-</h4>
+    <pre>
+        let studentRecords = [
+        { name: "John", id: 123, marks: 98 },
+        { name: "Baba", id: 101, marks: 23 },
+        { name: "yaga", id: 200, marks: 45 },
+        { name: "Wick", id: 115, marks: 75 },
+      ];
+      
+      
+      let UpperCase = [];
+      
+      UpperCase=studentRecords.map((student)=>{
+        return  student.name.toUpperCase()
+      })
+          
+    </pre>
+    <h4>Output:- ['JOHN', 'BABA', 'YAGA', 'WICK']</h4>
+    <h4>explanation:-</h4>
+    <p>
+        This code defines an array called `studentRecords` containing objects representing student records with their names, IDs, and marks. It then declares an empty array called `UpperCase`. Using the `map` function, it transforms the `studentRecords` array by extracting the names of the students and converting them to uppercase. The resulting uppercase names are stored in the `UpperCase` array.
+    </p>
+    <hr>
+    <h3>
+        Q2. "Suppose we have the same dataset as above but this time we want to get the details of students who scored more than 50 marks.
+
+        [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]".
+      </h3>
+      <h4>Ans:-</h4>
+      <pre>
+        let studentRecords = [
+        { name: "John", id: 123, marks: 98 },
+        { name: "Baba", id: 101, marks: 23 },
+        { name: "yaga", id: 200, marks: 45 },
+        { name: "Wick", id: 115, marks: 75 },
+      ];
+      
+      
+      
+      
+      
+      let students =[]
+      
+      students  = studentRecords.filter((student)=>student.marks>50)
+      
+      console.log(students);
+            
+      </pre>
+      <h4>Output:-   [{name: 'John', id: 123, marks: 98 },{name: 'Wick', id: 115, marks: 75 }]</h4>
+      <h4>explanation:-</h4>
+      <p>
+        This code defines an array called `studentRecords` containing objects representing student records with their names, IDs, and marks. It then declares an empty array called `students`. Using the `filter` method, it filters the `studentRecords` array based on the condition that only students with marks greater than 50 should be included. The filtered results are stored in the `students` array. Finally, the `students` array is logged to the console, displaying the student records that meet the specified condition (marks greater than 50).
+      </p>
+      <hr>
+      <h3>
+        Q3. Retrieve the details of students who scored more than 50 marks and have IDs greater than 120..
+      </h3>
+      <h4>Ans:-</h4>
+      <pre>
+        let studentRecords = [
+        { name: "John", id: 123, marks: 98 },
+        { name: "Baba", id: 101, marks: 23 },
+        { name: "yaga", id: 200, marks: 45 },
+        { name: "Wick", id: 115, marks: 75 },
+      ];
+
+      let students =[]
+      
+      students  = studentRecords.filter((student)=>student.marks>50)
+      
+      console.log(students);
+            
+      </pre>
+      <h4>Output:-   [{name: 'John', id: 123, marks: 98 },  { name: "yaga", id: 200, marks: 45 },]</h4>
+      <h4>explanation:-</h4>
+      <p>
+        This code defines an array called `studentRecords` containing objects representing student records with their names, IDs, and marks. It then declares an empty array called `students`. Using the `filter` method, it filters the `studentRecords` array based on the condition that only students with marks greater than 50
+        and id is greter than 120 should be included. The filtered results are stored in the `students` array. Finally, the `students` array is logged to the console, displaying the student records that meet the specified condition (marks greater than 50  and id is greter than 120).
+      </p>
+      <hr>
+      <h3>
+        Q4. Consider the same scenario we have discussed above, but this time we would like to know the sum total of the marks of the students..
+      </h3>
+      <h4>Ans:-</h4>
+      <pre>
+        let studentRecords = [
+        { name: "John", id: 123, marks: 98 },
+        { name: "Baba", id: 101, marks: 23 },
+        { name: "yaga", id: 200, marks: 45 },
+        { name: "Wick", id: 115, marks: 75 },
+      ];
+      
+      let sumOfMarks = studentRecords.reduce((accumulator, student) => {
+        return accumulator + student.marks;
+      }, 0);
+      
+      console.log(sumOfMarks);
+      
+            
+      </pre>
+      <h4>Output:-  241</h4>
+      <h4>explanation:-</h4>
+      <p>
+        This code initializes the sumOfMarks variable to 0. The reduce method is then used to iterate over each student in the studentRecords array and accumulate their marks by adding them to the accumulator. Finally, the sum of all marks is logged to the console. In this case, the output would be 241 since the sum of 98 + 23 + 45 + 75 is 241.
+      </p>
+      <h3>
+        Q5. This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above..
+      </h3>
+      <h4>Ans:-</h4>
+      <pre>
+        let studentRecords = [
+        { name: "John", id: 123, marks: 98 },
+        { name: "Baba", id: 101, marks: 23 },
+        { name: "yaga", id: 200, marks: 45 },
+        { name: "Wick", id: 115, marks: 75 },
+      ];
+      
+      let studentsWithMarksGreaterThan50 = studentRecords
+        .filter(student => student.marks > 50)
+        .map(student => student.name);
+      
+      console.log(studentsWithMarksGreaterThan50);
+      
+      
+            
+      </pre>
+      <h4>Output:-  241</h4>
+      <h4>explanation:-</h4>
+      <p>
+        This code first uses the filter method to filter out the student records where the marks are greater than 50. Then, the map method is used to extract only the names of the filtered students into a new array called studentsWithMarksGreaterThan50. Finally, the array containing the names of the students with marks greater than 50 is logged to the console.
+      </p>
+      <hr>
+      <h3>
+        Q6. This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above..
+      </h3>
+      <h4>Ans:-</h4>
+      <pre>
+        let studentRecords = [
+        { name: "John", id: 123, marks: 98 },
+        { name: "Baba", id: 101, marks: 23 },
+        { name: "yaga", id: 200, marks: 45 },
+        { name: "Wick", id: 115, marks: 75 },
+      ];
+      
+      let sumOfMarks = studentRecords
+        .filter(student => student.id > 120)
+        .reduce((accumulator, student) => accumulator + student.marks, 0);
+      
+      console.log(sumOfMarks);
+      
+      
+            
+      </pre>
+      <h4>Output:-  241</h4>
+      <h4>explanation:-</h4>
+      <p>
+        This code first uses the filter method to filter out the student records where the ID is greater than 120. Then, the reduce method is used to iterate over the filtered students and accumulate their marks by adding them to the accumulator. Finally, the sum of marks for the filtered students is logged to the console.
+      </p>
+      <hr>
+      <h3>
+        Q7. This time we want to get only the names of the students who scored more than 50 marks from the same dataset used above..
+      </h3>
+      <h4>Ans:-</h4>
+      <pre>
+        let studentRecords = [
+        { name: "John", id: 123, marks: 98 },
+        { name: "Baba", id: 101, marks: 23 },
+        { name: "yaga", id: 200, marks: 45 },
+        { name: "Wick", id: 115, marks: 75 },
+      ];
+      
+      let totalMarks = studentRecords
+        .map(student => {
+          if (student.marks < 50) {
+            return { ...student, marks: student.marks + 15 };
+          } else {
+            return student;
+          }
+        })
+        .filter(student => student.marks > 50)
+        .reduce((accumulator, student) => accumulator + student.marks, 0);
+      
+      console.log(totalMarks);
+      
+      
+      
+            
+      </pre>
+      <h4>Output:-  233
+    </h4>
+      <h4>explanation:-</h4>
+      <p>
+        This code first uses the map method to iterate over each student record and check if their marks are less than 50. If so, it adds a grace of 15 marks by creating a new object with the updated marks. Otherwise, it keeps the original student record unchanged. Then, the filter method is used to filter out students whose marks are still greater than 50 after the grace has been applied. Finally, the reduce method calculates the total marks by accumulating the marks of the filtered students. The resulting total marks are logged to the console
+      </p>
+      <hr>
+      <h3>
+        Q8. Create 6 objects , each object will have name, class, roll no as properties. Store these objects in an array of objects. 
+      </h3>
+      <h4>Ans:-</h4>
+      <pre>
+        let studentObjects = [
+        { name: "John", class: "A", rollNo: 1 },
+        { name: "Baba", class: "B", rollNo: 2 },
+        { name: "Yaga", class: "A", rollNo: 3 },
+        { name: "Wick", class: "B", rollNo: 4 },
+        { name: "Alice", class: "A", rollNo: 5 },
+        { name: "Bob", class: "B", rollNo: 6 }
+      ];
+      
+      console.log(studentObjects);
+      
+      </pre>
+      <h4>Output:-   [
+        { name: "John", class: "A", rollNo: 1 },
+        { name: "Baba", class: "B", rollNo: 2 },
+        { name: "Yaga", class: "A", rollNo: 3 },
+        { name: "Wick", class: "B", rollNo: 4 },
+        { name: "Alice", class: "A", rollNo: 5 },
+        { name: "Bob", class: "B", rollNo: 6 }
+      ]
+    </h4>
+      <h4>explanation:-</h4>
+      <p>
+        In this code, we define an array studentObjects that contains six objects, each representing a student. Each object has properties such as name, class, and rollNo. The objects are initialized with the respective values based on the given dataset. Finally, we log the studentObjects array to the console to verify its contents.
+      </p>
+</body>
+</html>
